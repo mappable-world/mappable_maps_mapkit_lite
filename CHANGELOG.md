@@ -1,3 +1,3 @@
-## 4.7.2-beta3
+## 4.7.2-beta4
 
 * new version
