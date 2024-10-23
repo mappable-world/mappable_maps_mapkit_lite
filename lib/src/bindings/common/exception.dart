@@ -9,6 +9,9 @@ final void Function(NativeString) _nativeAssert = library
         'mappable_maps_flutter_native_assert')
     .asFunction(isLeaf: true);
 
+final Pointer<Bool> _lastCallSuccess =
+    library.lookup<Bool>('mappable_maps_flutter_last_call_success');
+
 void nativeAssert(String message) {
   _nativeAssert(toNativeString(message));
 }
@@ -30,5 +33,20 @@ class AsyncErrorHandler {
     } else if (_onError is Function(Object, StackTrace)) {
       _onError!(error, stack);
     }
+  }
+}
+
+class NativeNullException implements Exception {
+  const NativeNullException();
+
+  @override
+  String toString() {
+    return 'NativeNullException: access to deleted native object.';
+  }
+}
+
+void checkCallResult() {
+  if (!_lastCallSuccess.value) {
+    throw NativeNullException();
   }
 }

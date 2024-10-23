@@ -5,14 +5,15 @@ core.List<mapkit_geometry_geometry.PolylinePosition> _positionsOfFork(
     mapkit_geometry_geometry.PolylinePosition firstPolylinePosition,
     mapkit_geometry_geometry.Polyline secondPolyline,
     mapkit_geometry_geometry.PolylinePosition secondPolylinePosition) {
+  final result = _PolylineUtils_positionsOfFork(
+      mapkit_geometry_geometry.PolylineImpl.getNativePtr(firstPolyline),
+      mapkit_geometry_geometry.PolylinePositionImpl.toNative(
+          firstPolylinePosition),
+      mapkit_geometry_geometry.PolylineImpl.getNativePtr(secondPolyline),
+      mapkit_geometry_geometry.PolylinePositionImpl.toNative(
+          secondPolylinePosition));
   return mapkit_geometry_geometry.PolylinePositionContainerExtension
-      .toPlatformVector(_PolylineUtils_positionsOfFork(
-          mapkit_geometry_geometry.PolylineImpl.getNativePtr(firstPolyline),
-          mapkit_geometry_geometry.PolylinePositionImpl.toNative(
-              firstPolylinePosition),
-          mapkit_geometry_geometry.PolylineImpl.getNativePtr(secondPolyline),
-          mapkit_geometry_geometry.PolylinePositionImpl.toNative(
-              secondPolylinePosition)));
+      .toPlatformVector(result);
 }
 
 mapkit_geometry_geometry.PolylinePosition _advancePolylinePosition(
@@ -20,37 +21,39 @@ mapkit_geometry_geometry.PolylinePosition _advancePolylinePosition(
   mapkit_geometry_geometry.PolylinePosition position, {
   required core.double distance,
 }) {
-  return mapkit_geometry_geometry.PolylinePositionImpl.fromNative(
-      _PolylineUtils_advancePolylinePosition(
-          mapkit_geometry_geometry.PolylineImpl.getNativePtr(polyline),
-          mapkit_geometry_geometry.PolylinePositionImpl.toNative(position),
-          distance));
+  final result = _PolylineUtils_advancePolylinePosition(
+      mapkit_geometry_geometry.PolylineImpl.getNativePtr(polyline),
+      mapkit_geometry_geometry.PolylinePositionImpl.toNative(position),
+      distance);
+  return mapkit_geometry_geometry.PolylinePositionImpl.fromNative(result);
 }
 
 mapkit_geometry_point.Point _pointByPolylinePosition(
     mapkit_geometry_geometry.Polyline geometry,
     mapkit_geometry_geometry.PolylinePosition position) {
-  return mapkit_geometry_point.PointImpl.fromNative(
-      _PolylineUtils_pointByPolylinePosition(
-          mapkit_geometry_geometry.PolylineImpl.getNativePtr(geometry),
-          mapkit_geometry_geometry.PolylinePositionImpl.toNative(position)));
+  final result = _PolylineUtils_pointByPolylinePosition(
+      mapkit_geometry_geometry.PolylineImpl.getNativePtr(geometry),
+      mapkit_geometry_geometry.PolylinePositionImpl.toNative(position));
+  return mapkit_geometry_point.PointImpl.fromNative(result);
 }
 
 core.double _distanceBetweenPolylinePositions(
     mapkit_geometry_geometry.Polyline polyline,
     mapkit_geometry_geometry.PolylinePosition from,
     mapkit_geometry_geometry.PolylinePosition to) {
-  return _PolylineUtils_distanceBetweenPolylinePositions(
+  final result = _PolylineUtils_distanceBetweenPolylinePositions(
       mapkit_geometry_geometry.PolylineImpl.getNativePtr(polyline),
       mapkit_geometry_geometry.PolylinePositionImpl.toNative(from),
       mapkit_geometry_geometry.PolylinePositionImpl.toNative(to));
+  return result;
 }
 
 mapkit_geometry_geo_polyline_index.PolylineIndex _createPolylineIndex(
     mapkit_geometry_geometry.Polyline polyline) {
+  final result = _PolylineUtils_createPolylineIndex(
+      mapkit_geometry_geometry.PolylineImpl.getNativePtr(polyline));
   return mapkit_geometry_geo_polyline_index.PolylineIndexImpl.fromNativePtr(
-      _PolylineUtils_createPolylineIndex(
-          mapkit_geometry_geometry.PolylineImpl.getNativePtr(polyline)));
+      result);
 }
 
 final ffi.Pointer<ffi.Void> Function(

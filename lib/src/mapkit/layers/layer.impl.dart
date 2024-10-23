@@ -48,11 +48,14 @@ class LayerImpl implements Layer, ffi.Finalizable {
 
   void remove() {
     _Layer_remove(ptr);
+    exception.checkCallResult();
   }
 
   mapkit_layers_data_source_layer.DataSourceLayer dataSourceLayer() {
+    final result = _Layer_dataSourceLayer(ptr);
+    exception.checkCallResult();
     return mapkit_layers_data_source_layer.DataSourceLayerImpl.fromNativePtr(
-        _Layer_dataSourceLayer(ptr));
+        result);
   }
 }
 

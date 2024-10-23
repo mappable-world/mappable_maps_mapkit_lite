@@ -168,8 +168,8 @@ class LocationSimulatorImpl extends mapkit_location_location_manager
 
   @core.override
   mapkit_geometry_geometry.Polyline? get geometry {
-    return mapkit_geometry_geometry.PolylineImpl.fromOptionalPtr(
-        _LocationSimulator_get_geometry(ptr));
+    final result = _LocationSimulator_get_geometry(ptr);
+    return mapkit_geometry_geometry.PolylineImpl.fromOptionalPtr(result);
   }
 
   @core.override
@@ -180,7 +180,8 @@ class LocationSimulatorImpl extends mapkit_location_location_manager
 
   @core.override
   core.double get speed {
-    return _LocationSimulator_get_speed(ptr);
+    final result = _LocationSimulator_get_speed(ptr);
+    return result;
   }
 
   @core.override
@@ -190,7 +191,8 @@ class LocationSimulatorImpl extends mapkit_location_location_manager
 
   @core.override
   core.bool get active {
-    return _LocationSimulator_get_active(ptr);
+    final result = _LocationSimulator_get_active(ptr);
+    return result;
   }
 
   void subscribeForSimulatorEvents(
@@ -215,8 +217,8 @@ class LocationSimulatorImpl extends mapkit_location_location_manager
   }
 
   mapkit_geometry_geometry.PolylinePosition polylinePosition() {
-    return mapkit_geometry_geometry.PolylinePositionImpl.fromNative(
-        _LocationSimulator_polylinePosition(ptr));
+    final result = _LocationSimulator_polylinePosition(ptr);
+    return mapkit_geometry_geometry.PolylinePositionImpl.fromNative(result);
   }
 
   void setLocationSpeedProviding(core.bool provide) {

@@ -48,158 +48,200 @@ class MapImpl implements Map, ffi.Finalizable {
 
   @core.override
   mapkit_map_camera_position.CameraPosition get cameraPosition {
-    return mapkit_map_camera_position.CameraPositionImpl.fromNative(
-        _Map_get_cameraPosition(ptr));
+    final result = _Map_get_cameraPosition(ptr);
+    exception.checkCallResult();
+    return mapkit_map_camera_position.CameraPositionImpl.fromNative(result);
   }
 
   @core.override
   mapkit_map_visible_region.VisibleRegion get visibleRegion {
-    return mapkit_map_visible_region.VisibleRegionImpl.fromNative(
-        _Map_get_visibleRegion(ptr));
+    final result = _Map_get_visibleRegion(ptr);
+    exception.checkCallResult();
+    return mapkit_map_visible_region.VisibleRegionImpl.fromNative(result);
   }
 
   @core.override
   mapkit_map_camera_bounds.CameraBounds get cameraBounds {
-    return mapkit_map_camera_bounds.CameraBoundsImpl.fromNativePtr(
-        _Map_get_cameraBounds(ptr));
+    final result = _Map_get_cameraBounds(ptr);
+    exception.checkCallResult();
+    return mapkit_map_camera_bounds.CameraBoundsImpl.fromNativePtr(result);
   }
 
   @core.override
   core.bool get nightModeEnabled {
-    return _Map_get_nightModeEnabled(ptr);
+    final result = _Map_get_nightModeEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set nightModeEnabled(core.bool val) {
     _Map_set_nightModeEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get zoomGesturesEnabled {
-    return _Map_get_zoomGesturesEnabled(ptr);
+    final result = _Map_get_zoomGesturesEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set zoomGesturesEnabled(core.bool val) {
     _Map_set_zoomGesturesEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get scrollGesturesEnabled {
-    return _Map_get_scrollGesturesEnabled(ptr);
+    final result = _Map_get_scrollGesturesEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set scrollGesturesEnabled(core.bool val) {
     _Map_set_scrollGesturesEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get tiltGesturesEnabled {
-    return _Map_get_tiltGesturesEnabled(ptr);
+    final result = _Map_get_tiltGesturesEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set tiltGesturesEnabled(core.bool val) {
     _Map_set_tiltGesturesEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get rotateGesturesEnabled {
-    return _Map_get_rotateGesturesEnabled(ptr);
+    final result = _Map_get_rotateGesturesEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set rotateGesturesEnabled(core.bool val) {
     _Map_set_rotateGesturesEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get fastTapEnabled {
-    return _Map_get_fastTapEnabled(ptr);
+    final result = _Map_get_fastTapEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set fastTapEnabled(core.bool val) {
     _Map_set_fastTapEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   mapkit_map_map_type.MapType get mapType {
-    return mapkit_map_map_type.MapTypeImpl.fromInt(_Map_get_mapType(ptr));
+    final result = _Map_get_mapType(ptr);
+    exception.checkCallResult();
+    return mapkit_map_map_type.MapTypeImpl.fromInt(result);
   }
 
   @core.override
   set mapType(mapkit_map_map_type.MapType val) {
     _Map_set_mapType(ptr, mapkit_map_map_type.MapTypeImpl.toInt(val));
+    exception.checkCallResult();
   }
 
   @core.override
   mapkit_map_map_object_collection.MapObjectCollection get mapObjects {
+    final result = _Map_get_mapObjects(ptr);
+    exception.checkCallResult();
     return mapkit_map_map_object_collection.MapObjectCollectionImpl
-        .fromNativePtr(_Map_get_mapObjects(ptr));
+        .fromNativePtr(result);
   }
 
   @core.override
   mapkit_logo_logo.Logo get logo {
-    return mapkit_logo_logo.LogoImpl.fromNativePtr(_Map_get_logo(ptr));
+    final result = _Map_get_logo(ptr);
+    exception.checkCallResult();
+    return mapkit_logo_logo.LogoImpl.fromNativePtr(result);
   }
 
   @core.override
   core.int? get poiLimit {
-    return to_platform.toPlatformFromPointerUint32(_Map_get_poiLimit(ptr));
+    final result = _Map_get_poiLimit(ptr);
+    exception.checkCallResult();
+    return to_platform.toPlatformFromPointerUint32(result);
   }
 
   @core.override
   set poiLimit(core.int? val) {
     _Map_set_poiLimit(ptr, to_native.toNativePtrUint32(val));
+    exception.checkCallResult();
   }
 
   @core.override
   mapkit_map_map_mode.MapMode get mode {
-    return mapkit_map_map_mode.MapModeImpl.fromInt(_Map_get_mode(ptr));
+    final result = _Map_get_mode(ptr);
+    exception.checkCallResult();
+    return mapkit_map_map_mode.MapModeImpl.fromInt(result);
   }
 
   @core.override
   set mode(mapkit_map_map_mode.MapMode val) {
     _Map_set_mode(ptr, mapkit_map_map_mode.MapModeImpl.toInt(val));
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get hdModeEnabled {
-    return _Map_get_hdModeEnabled(ptr);
+    final result = _Map_get_hdModeEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set hdModeEnabled(core.bool val) {
     _Map_set_hdModeEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   @core.override
   core.bool get awesomeModelsEnabled {
-    return _Map_get_awesomeModelsEnabled(ptr);
+    final result = _Map_get_awesomeModelsEnabled(ptr);
+    exception.checkCallResult();
+    return result;
   }
 
   @core.override
   set awesomeModelsEnabled(core.bool val) {
     _Map_set_awesomeModelsEnabled(ptr, val);
+    exception.checkCallResult();
   }
 
   mapkit_map_camera_position.CameraPosition cameraPositionForGeometry(
       mapkit_geometry_geometry.Geometry geometry) {
-    return mapkit_map_camera_position.CameraPositionImpl.fromNative(
-        _Map_cameraPositionForGeometry(
-            ptr, mapkit_geometry_geometry.GeometryImpl.toNative(geometry)));
+    final result = _Map_cameraPositionForGeometry(
+        ptr, mapkit_geometry_geometry.GeometryImpl.toNative(geometry));
+    exception.checkCallResult();
+    return mapkit_map_camera_position.CameraPositionImpl.fromNative(result);
   }
 
   mapkit_map_camera_position.CameraPosition cameraPositionWithFocus(
       mapkit_geometry_geometry.Geometry geometry,
       mapkit_screen_types.ScreenRect focusRect) {
-    return mapkit_map_camera_position.CameraPositionImpl.fromNative(
-        _Map_cameraPositionWithFocus(
-            ptr,
-            mapkit_geometry_geometry.GeometryImpl.toNative(geometry),
-            mapkit_screen_types.ScreenRectImpl.toNative(focusRect)));
+    final result = _Map_cameraPositionWithFocus(
+        ptr,
+        mapkit_geometry_geometry.GeometryImpl.toNative(geometry),
+        mapkit_screen_types.ScreenRectImpl.toNative(focusRect));
+    exception.checkCallResult();
+    return mapkit_map_camera_position.CameraPositionImpl.fromNative(result);
   }
 
   mapkit_map_camera_position.CameraPosition cameraPositionWithAzimut(
@@ -208,22 +250,22 @@ class MapImpl implements Map, ffi.Finalizable {
     required core.double tilt,
     mapkit_screen_types.ScreenRect? focusRect,
   }) {
-    return mapkit_map_camera_position.CameraPositionImpl.fromNative(
-        _Map_cameraPositionWithAzimut(
-            ptr,
-            mapkit_geometry_geometry.GeometryImpl.toNative(geometry),
-            azimuth,
-            tilt,
-            mapkit_screen_types.ScreenRectImpl.toPointer(focusRect)));
+    final result = _Map_cameraPositionWithAzimut(
+        ptr,
+        mapkit_geometry_geometry.GeometryImpl.toNative(geometry),
+        azimuth,
+        tilt,
+        mapkit_screen_types.ScreenRectImpl.toPointer(focusRect));
+    exception.checkCallResult();
+    return mapkit_map_camera_position.CameraPositionImpl.fromNative(result);
   }
 
   mapkit_map_visible_region.VisibleRegion visibleRegionForPosition(
       mapkit_map_camera_position.CameraPosition cameraPosition) {
-    return mapkit_map_visible_region.VisibleRegionImpl.fromNative(
-        _Map_visibleRegionForPosition(
-            ptr,
-            mapkit_map_camera_position.CameraPositionImpl.toNative(
-                cameraPosition)));
+    final result = _Map_visibleRegionForPosition(ptr,
+        mapkit_map_camera_position.CameraPositionImpl.toNative(cameraPosition));
+    exception.checkCallResult();
+    return mapkit_map_visible_region.VisibleRegionImpl.fromNative(result);
   }
 
   void moveWithAnimation(
@@ -236,11 +278,13 @@ class MapImpl implements Map, ffi.Finalizable {
         mapkit_map_camera_position.CameraPositionImpl.toNative(cameraPosition),
         mapkit_animation.AnimationImpl.toNative(animation),
         MapCameraCallbackImpl.getNativePtr(cameraCallback));
+    exception.checkCallResult();
   }
 
   void move(mapkit_map_camera_position.CameraPosition cameraPosition) {
     _Map_move(ptr,
         mapkit_map_camera_position.CameraPositionImpl.toNative(cameraPosition));
+    exception.checkCallResult();
   }
 
   void addInputListener(
@@ -249,6 +293,7 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_map_input_listener.MapInputListenerImpl.getNativePtr(
             inputListener));
+    exception.checkCallResult();
   }
 
   void removeInputListener(
@@ -257,6 +302,7 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_map_input_listener.MapInputListenerImpl.getNativePtr(
             inputListener));
+    exception.checkCallResult();
   }
 
   void addCameraListener(
@@ -265,6 +311,7 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_map_camera_listener.MapCameraListenerImpl.getNativePtr(
             cameraListener));
+    exception.checkCallResult();
   }
 
   void removeCameraListener(
@@ -273,6 +320,7 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_map_camera_listener.MapCameraListenerImpl.getNativePtr(
             cameraListener));
+    exception.checkCallResult();
   }
 
   void setMapLoadedListener(
@@ -281,6 +329,7 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_map_map_loaded_listener.MapLoadedListenerImpl.getNativePtr(
             mapLoadedListener));
+    exception.checkCallResult();
   }
 
   void addTapListener(
@@ -290,6 +339,7 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_layers_geo_object_tap_listener.LayersGeoObjectTapListenerImpl
             .getNativePtr(tapListener));
+    exception.checkCallResult();
   }
 
   void removeTapListener(
@@ -299,10 +349,12 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_layers_geo_object_tap_listener.LayersGeoObjectTapListenerImpl
             .getNativePtr(tapListener));
+    exception.checkCallResult();
   }
 
   void deselectGeoObject() {
     _Map_deselectGeoObject(ptr);
+    exception.checkCallResult();
   }
 
   void selectGeoObject(
@@ -312,34 +364,44 @@ class MapImpl implements Map, ffi.Finalizable {
         ptr,
         mapkit_map_geo_object_selection_metadata.GeoObjectSelectionMetadataImpl
             .getNativePtr(selectionMetaData));
+    exception.checkCallResult();
   }
 
   core.bool setMapStyle(core.String style) {
-    return _Map_setMapStyle(ptr, to_native.toNativeString(style));
+    final result = _Map_setMapStyle(ptr, to_native.toNativeString(style));
+    exception.checkCallResult();
+    return result;
   }
 
   core.bool setMapStyleWithId({
     required core.int id,
     required core.String style,
   }) {
-    return _Map_setMapStyleWithId(ptr, id, to_native.toNativeString(style));
+    final result =
+        _Map_setMapStyleWithId(ptr, id, to_native.toNativeString(style));
+    exception.checkCallResult();
+    return result;
   }
 
   void resetMapStyles() {
     _Map_resetMapStyles(ptr);
+    exception.checkCallResult();
   }
 
   void set2DMode(core.bool enable) {
     _Map_set2DMode(ptr, enable);
+    exception.checkCallResult();
   }
 
   mapkit_geometry_geo_projection.Projection projection() {
-    return mapkit_geometry_geo_projection.ProjectionImpl.fromNativePtr(
-        _Map_projection(ptr));
+    final result = _Map_projection(ptr);
+    exception.checkCallResult();
+    return mapkit_geometry_geo_projection.ProjectionImpl.fromNativePtr(result);
   }
 
   void wipe() {
     _Map_wipe(ptr);
+    exception.checkCallResult();
   }
 
   mapkit_layers_layer.Layer addTileLayer(
@@ -347,13 +409,15 @@ class MapImpl implements Map, ffi.Finalizable {
     mapkit_map_tile_data_source_builder.CreateTileDataSource createDataSource, {
     required core.String layerId,
   }) {
-    return mapkit_layers_layer.LayerImpl.fromNativePtr(_Map_addTileLayer(
+    final result = _Map_addTileLayer(
       ptr,
       to_native.toNativeString(layerId),
       mapkit_layers_layer_options.LayerOptionsImpl.toNative(layerOptions),
       mapkit_map_tile_data_source_builder.CreateTileDataSourceImpl.getNativePtr(
           createDataSource),
-    ));
+    );
+    exception.checkCallResult();
+    return mapkit_layers_layer.LayerImpl.fromNativePtr(result);
   }
 }
 

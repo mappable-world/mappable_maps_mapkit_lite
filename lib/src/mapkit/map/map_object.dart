@@ -5,8 +5,12 @@ import 'package:mappable_maps_mapkit_lite/src/bindings/common/library.dart'
 import 'dart:core' as core;
 import 'package:mappable_maps_mapkit_lite/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
+import 'package:mappable_maps_mapkit_lite/src/bindings/common/async.dart'
+    show runWithBlockUi;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/dispatcher.dart'
     as nativeBinding;
+import 'package:mappable_maps_mapkit_lite/src/bindings/common/exception.dart'
+    as exception;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/platform_user_data.dart'
     as platform_user_data;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/string_map.dart'
@@ -85,5 +89,7 @@ abstract class MapObject implements ffi.Finalizable {
 
   core.Object? get userData;
   set userData(core.Object? val);
+
+  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }

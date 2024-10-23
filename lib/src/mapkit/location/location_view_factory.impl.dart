@@ -3,10 +3,11 @@ part of 'location_view_factory.dart';
 mapkit_location_location_view_source.LocationViewSource
     _createLocationViewSource(
         mapkit_location_location_manager.LocationManager locationManager) {
+  final result = _LocationViewSourceFactory_createLocationViewSource(
+      mapkit_location_location_manager.LocationManagerImpl.getNativePtr(
+          locationManager));
   return mapkit_location_location_view_source.LocationViewSourceImpl
-      .fromNativePtr(_LocationViewSourceFactory_createLocationViewSource(
-          mapkit_location_location_manager.LocationManagerImpl.getNativePtr(
-              locationManager)));
+      .fromNativePtr(result);
 }
 
 final ffi.Pointer<ffi.Void> Function(

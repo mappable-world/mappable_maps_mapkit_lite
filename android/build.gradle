@@ -46,10 +46,10 @@ android {
     }
 
     dependencies {
-        api 'world.mappable.android:maps.mobile:4.7.2-beta4-lite-flutter'
+        api 'world.mappable.android:maps.mobile:4.8.1-beta-lite-flutter'
     }
 
     defaultConfig {
-        minSdkVersion 23
+        minSdkVersion 26
     }
 }

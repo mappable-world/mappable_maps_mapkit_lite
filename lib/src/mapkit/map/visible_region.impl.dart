@@ -70,13 +70,15 @@ extension VisibleRegionImpl on VisibleRegion {
 }
 
 mapkit_geometry_geometry.Geometry _toPolygon(VisibleRegion visibleRegion) {
-  return mapkit_geometry_geometry.GeometryImpl.toPlatform(
-      _VisibleRegionUtils_toPolygon(VisibleRegionImpl.toNative(visibleRegion)));
+  final result =
+      _VisibleRegionUtils_toPolygon(VisibleRegionImpl.toNative(visibleRegion));
+  return mapkit_geometry_geometry.GeometryImpl.toPlatform(result);
 }
 
 mapkit_geometry_geometry.BoundingBox _getBounds(VisibleRegion visibleRegion) {
-  return mapkit_geometry_geometry.BoundingBoxImpl.fromNative(
-      _VisibleRegionUtils_getBounds(VisibleRegionImpl.toNative(visibleRegion)));
+  final result =
+      _VisibleRegionUtils_getBounds(VisibleRegionImpl.toNative(visibleRegion));
+  return mapkit_geometry_geometry.BoundingBoxImpl.fromNative(result);
 }
 
 final mapkit_geometry_geometry.GeometryNative Function(VisibleRegionNative)

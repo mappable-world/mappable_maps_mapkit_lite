@@ -6,6 +6,10 @@ import 'dart:core' as core;
 import 'dart:ui' as ui;
 import 'package:mappable_maps_mapkit_lite/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
+import 'package:mappable_maps_mapkit_lite/src/bindings/common/async.dart'
+    show runWithBlockUi;
+import 'package:mappable_maps_mapkit_lite/src/bindings/common/exception.dart'
+    as exception;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/native_types.dart'
     as native_types;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/string_map.dart'
@@ -56,5 +60,6 @@ abstract class CircleMapObject
   core.bool get geodesic;
   set geodesic(core.bool val);
 
+  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }

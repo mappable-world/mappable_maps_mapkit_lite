@@ -48,8 +48,9 @@ class GeoObjectTapEventImpl implements GeoObjectTapEvent, ffi.Finalizable {
 
   @core.override
   mapkit_geo_object.GeoObject get geoObject {
-    return mapkit_geo_object.GeoObjectImpl.fromNativePtr(
-        _GeoObjectTapEvent_get_geoObject(ptr));
+    final result = _GeoObjectTapEvent_get_geoObject(ptr);
+    exception.checkCallResult();
+    return mapkit_geo_object.GeoObjectImpl.fromNativePtr(result);
   }
 }
 
