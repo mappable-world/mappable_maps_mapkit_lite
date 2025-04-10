@@ -5,8 +5,6 @@ import 'package:mappable_maps_mapkit_lite/src/bindings/common/library.dart'
 import 'dart:core' as core;
 import 'package:mappable_maps_mapkit_lite/src/bindings/annotations/annotations.dart'
     as bindings_annotations;
-import 'package:mappable_maps_mapkit_lite/src/bindings/common/async.dart'
-    show runWithBlockUi;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/string_map.dart'
     as string_map;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/vector.dart'
@@ -23,6 +21,5 @@ part 'errors.impl.dart';
 /// Cache path doesn't exist or there no read permissions.
 abstract class CachePathUnavailable
     implements runtime_local_error.LocalError, ffi.Finalizable {
-  /// Usable only in [runWithBlockUi] or listener handlers.
   core.bool isValid();
 }

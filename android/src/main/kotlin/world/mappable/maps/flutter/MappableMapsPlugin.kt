@@ -3,13 +3,14 @@ package world.mappable.maps.flutter
 import android.util.Log
 import androidx.annotation.NonNull
 import world.mappable.maps.flutter.method_handler.BaseMethodHandler
-import world.mappable.maps.flutter.method_handler.RuntimeHandler
 import world.mappable.maps.flutter.method_handler.ViewMethodHandler
 import world.mappable.maps.flutter.view.ViewFactory
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
+
+import world.mappable.runtime.Runtime
 
 /** MappableMapsPlugin */
 class MappableMapsPlugin : FlutterPlugin, ActivityAware {
@@ -18,17 +19,19 @@ class MappableMapsPlugin : FlutterPlugin, ActivityAware {
 
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+        Runtime.init(flutterPluginBinding.applicationContext, "maps-mobile")
+
         val viewFactory = ViewFactory(lifecycle)
         flutterPluginBinding.platformViewRegistry.registerViewFactory(
             "flutter_mappable_maps_view_factory",
             viewFactory
         )
 
-        handlers.add(RuntimeHandler(flutterPluginBinding))
         handlers.add(ViewMethodHandler(flutterPluginBinding, viewFactory))
     }
 
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
+        Runtime.onDetachedFromEngine()
         for (handler in handlers) {
             handler.dispose()
         }

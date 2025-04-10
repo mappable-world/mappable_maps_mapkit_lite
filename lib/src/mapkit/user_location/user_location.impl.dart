@@ -434,12 +434,11 @@ final ffi.Pointer<ffi.Void> Function(
         ffi.Pointer<
             ffi.NativeFunction<
                 ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-        ffi
-            .Pointer<
-                ffi.NativeFunction<
-                    ffi.Void Function(
-                        ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
-        ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
+        ffi.Pointer<
+            ffi.NativeFunction<
+                ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>,
+        ffi.Pointer<
+            ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)
     _UserLocationObjectListener_new = lib.library
         .lookup<ffi.NativeFunction<ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>, ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>)>>)>>(
             'mappable_flutter_mapkit_user_location_UserLocationObjectListener_new')
@@ -566,7 +565,8 @@ final ffi.Pointer<ffi.Void> Function(
                 ffi.NativeFunction<
                     ffi.Pointer<ffi.Void> Function(
                         ffi.Pointer<
-                            ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, mapkit_geometry_point.PointNative)>>)>>(
+                            ffi
+                            .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, mapkit_geometry_point.PointNative)>>)>>(
             'mappable_flutter_mapkit_user_location_UserLocationTapListener_new')
         .asFunction(isLeaf: true);
 
