@@ -46,7 +46,7 @@ android {
     }
 
     dependencies {
-        api 'world.mappable.android:maps.mobile:4.16.0-beta-lite-flutter'
+        api 'world.mappable.android:maps.mobile:4.17.0-beta-lite-flutter'
     }
 
     defaultConfig {

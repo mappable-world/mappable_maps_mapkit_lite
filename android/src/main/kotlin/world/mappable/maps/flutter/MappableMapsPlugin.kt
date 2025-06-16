@@ -3,6 +3,7 @@ package world.mappable.maps.flutter
 import android.util.Log
 import androidx.annotation.NonNull
 import world.mappable.maps.flutter.method_handler.BaseMethodHandler
+import world.mappable.maps.flutter.method_handler.RuntimeMethodHandler
 import world.mappable.maps.flutter.method_handler.ViewMethodHandler
 import world.mappable.maps.flutter.view.ViewFactory
 
@@ -16,9 +17,19 @@ import world.mappable.runtime.Runtime
 class MappableMapsPlugin : FlutterPlugin, ActivityAware {
     private val handlers = mutableListOf<BaseMethodHandler>()
     private val lifecycle = ActivityLifecycleWrapper()
+    private var engineId: Int? = null
+
+    fun initEngineId(id: Int) {
+        if (engineId != null) {
+            throw Exception("Double initialization MappableMapsPlugin with id: $engineId, new id: $id")
+        }
+        Log.d("MappableMapsPlugin", "Init engineId for MappableMapsPlugin: $id")
+        engineId = id
+    }
 
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+        Log.d("MappableMapsPlugin", "Attach new plugin to engine")
         Runtime.init(flutterPluginBinding.applicationContext, "maps-mobile")
 
         val viewFactory = ViewFactory(lifecycle)
@@ -28,10 +39,12 @@ class MappableMapsPlugin : FlutterPlugin, ActivityAware {
         )
 
         handlers.add(ViewMethodHandler(flutterPluginBinding, viewFactory))
+        handlers.add(RuntimeMethodHandler(flutterPluginBinding, this))
     }
 
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
-        Runtime.onDetachedFromEngine()
+        Log.d("MappableMapsPlugin", "Detach plugin from engine with id: $engineId")
+        Runtime.onDetachedFromEngine(engineId!!)
         for (handler in handlers) {
             handler.dispose()
         }
