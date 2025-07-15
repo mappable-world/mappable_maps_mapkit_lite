@@ -27,6 +27,14 @@ class MappableMapsPlugin : FlutterPlugin, ActivityAware {
         engineId = id
     }
 
+    fun tryReinitEngine(): Int? {
+        if (engineId == null) {
+            return null
+        }
+        Log.d("MappableMapsPlugin", "Reattach engine")
+        Runtime.onDetachedFromEngine(engineId!!)
+        return engineId!!
+    }
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         Log.d("MappableMapsPlugin", "Attach new plugin to engine")
