@@ -52,7 +52,9 @@ class MappableMapsPlugin : FlutterPlugin, ActivityAware {
 
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         Log.d("MappableMapsPlugin", "Detach plugin from engine with id: $engineId")
-        Runtime.onDetachedFromEngine(engineId!!)
+        if (engineId != null) {
+            Runtime.onDetachedFromEngine(engineId!!)
+        }
         for (handler in handlers) {
             handler.dispose()
         }

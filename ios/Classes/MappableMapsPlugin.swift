@@ -57,6 +57,8 @@ public class MappableMapsPlugin: NSObject, FlutterPlugin {
   }
 
   public func detachFromEngine(for registrar: FlutterPluginRegistrar) {
-      MRTRuntime.onDetachedFromEngine(withEngineId: _engineId!)
+      if (_engineId != nil) {
+          MRTRuntime.onDetachedFromEngine(withEngineId: _engineId!)
+      }
   }
 }
