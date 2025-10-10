@@ -1,7 +1,7 @@
 name: mappable_maps_mapkit_lite
 description: Mappable MapKit SDK for Flutter. This allow you to use the capabilities
   of Mappable.Maps in your Flutter applications for iOS and Android
-version: 4.23.0-beta
+version: 4.24.0-beta
 environment:
   sdk: ^3.1.0
   flutter: '>=3.29.0'
