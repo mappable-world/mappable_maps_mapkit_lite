@@ -7,8 +7,6 @@ import 'package:mappable_maps_mapkit_lite/src/bindings/annotations/annotations.d
     as bindings_annotations;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/exception.dart'
     as exception;
-import 'package:mappable_maps_mapkit_lite/src/bindings/common/platform_data_holder.dart'
-    as platform_data_holder;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/string_map.dart'
     as string_map;
 import 'package:mappable_maps_mapkit_lite/src/bindings/common/vector.dart'
