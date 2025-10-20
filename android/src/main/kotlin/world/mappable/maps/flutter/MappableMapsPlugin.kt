@@ -27,6 +27,14 @@ class MappableMapsPlugin : FlutterPlugin, ActivityAware {
         engineId = id
     }
 
+    fun tryReinitEngine(): Int? {
+        if (engineId == null) {
+            return null
+        }
+        Log.d("MappableMapsPlugin", "Reattach engine")
+        Runtime.onDetachedFromEngine(engineId!!)
+        return engineId!!
+    }
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         Log.d("MappableMapsPlugin", "Attach new plugin to engine")
@@ -44,7 +52,9 @@ class MappableMapsPlugin : FlutterPlugin, ActivityAware {
 
     override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
         Log.d("MappableMapsPlugin", "Detach plugin from engine with id: $engineId")
-        Runtime.onDetachedFromEngine(engineId!!)
+        if (engineId != null) {
+            Runtime.onDetachedFromEngine(engineId!!)
+        }
         for (handler in handlers) {
             handler.dispose()
         }
